@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Aesthetic Beauty</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("WLKEJIV8-LgAXL2ED");
+        })();
+    </script>
+<style>
+    .conteiner{
+       display: grid;
+	   grid-template-areas:
+	   'header'
+	   'content1'
+	   'content2'
+	   'content3'
+	   'content4'
+	   'footer';
+	   grid-gap: 10px;
+	   grid-template-rows: 450px 150px 1fr 150px 700px 450px;
+	}
+	body{
+       background-color: white;
+	   margin: 0;
+       padding: 0;
+	}
+	
+
+</style>
+</head>
+<body>
+<div class="conteiner">
+   <div class="item header">
+   <div class="overlay"></div>
+   <div class="header-container">
+    <div class="logo">
+      <img src="photos/logo.png" alt="Logo" width="140">
+      <h1>Plastic surgery</h1>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="servicesandprices.html">Service and prices</a></li>
+		<li><a href="gallery.html">Gallery</a></li>
+		<li><a href="Atsiliepimai.html">Reviews</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+      </ul>
+    </nav>
+   </div>
+   </div>
+   <div class="content1">
+   <h4>Contact us</h4>
+   </div>
+   <div class="content2">
+   <div class="container-location">
+        <div class="location-card">
+            <h2>KLAIPĖDA</h2>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2294.906933576937!2d21.144900915641183!3d55.7114919805416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e4e5d58d511c21%3A0x1a9b3a16fce4db3!2sClinicus%20Klaip%C4%97da!5e0!3m2!1sen!2slt!4v1632750831249!5m2!1sen!2slt"
+                    width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="info">
+                <p><strong>Šaulių g. 25A, Klaipėda</strong></p>
+                <p>+370 64 835972</p>
+                <p>+370 46 825266</p>
+                <p>I-V 8.00 – 18.00 val.</p>
+                <p>Email: <a href="mailto:klaipeda@plasticsurgery.lt">plasticsurgery.lt</a></p>
+            </div>
+        </div>
+        
+        <div class="location-card">
+            <h2>VILNIUS</h2>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2292.911230194838!2d25.2884066156424!3d54.69852238028768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd9415b161d5d3%3A0xa019c3944e7a574e!2sClinicus%20Vilnius!5e0!3m2!1sen!2slt!4v1632750984236!5m2!1sen!2slt"
+                    width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="info">
+                <p><strong>Ąžuolų g. 17, Vilnius</strong></p>
+                <p>+370 65998258</p>
+                <p>I-V 8.00 – 18.00 val.</p>
+                <p>Email: <a href="mailto:klaipeda@plasticsurgery.lt">plasticsurgery.lt</a></p>
+            </div>
+        </div>
+    </div>
+   </div>
+   <div class="content3">
+   <div class="info-section">
+    <p>Aesthetic Beauty plastic and reconstructive surgery physicians are members of ISAPS, the American Society of Plastic Surgeons, and the Lithuanian Society of Plastic Surgery. Dr. D. Grigorovic (Klaipėda) and Dr. S. Grigorovic (Vilnius) have combined their knowledge, experience, and expertise acquired at Vilnius University and Lithuanian University of Health Sciences.</p>
+</div>
+   </div>
+    <div class="content4">
+        <div class="form-container">
+            <h3>Register for your visit</h3>
+            <div class="city-selection">
+                <button id="vilnius" class="city-button selected" type="button" onclick="selectCity('Vilnius')">Vilnius</button>
+                <button id="klaipeda" class="city-button" type="button" onclick="selectCity('Klaipeda')">Klaipeda</button>
+            </div>
+            <form id="contact-form">
+                <label for="name">Your name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Name" required>
+
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+
+                <label for="message">Your message <span class="required">*</span></label>
+                <textarea id="message" name="message" placeholder="What interests you" required></textarea>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">I have read and agree to the privacy policy</label>
+                </div>
+
+                <div class="captcha-container">
+                    <input type="checkbox" id="captcha" name="captcha">
+                    <label for="captcha">I'm not a robot</label>
+                </div>
+
+                <button type="submit" id="submit-button">Send Message</button>
+            </form>
+        </div>
+    </div>
+   
+   <div class="item footer">
+   <div class="footer-container">
+    <div class="footer-item">
+      <h2>Clinic VILNIUS</h2>
+      <p>Ąžuolų g. 17, Vilnius<br>LT 17250</p>
+      <p>I-V 8:00 – 18:00</p>
+      <p>Tel: +370 65998258</p>
+      <p>Email: <a href="mailto:vilnius@plasticsurgery.lt">vilnius@plasticsurgery.lt</a></p>
+    </div>
+    <div class="footer-item">
+      <h2>Clinic KLAIPEDA</h2>
+      <p>Šaulių g. 25A, Klaipėda<br>LT 92233</p>
+      <p>I-V 8:00 – 18:00</p>
+      <p>Tel: +370 64 835972<br>+370 46 825266</p>
+      <p>Email: <a href="mailto:klaipeda@plasticsurgery.lt">plasticsurgery.lt</a></p>
+    </div>
+   
+  </div>
+  <p contentEditable="false">&copy; 2024 all rights reserved. Aesthetic Beauty.lt</p>
+  </div>
+</div>
+<script>
+    // Track selected city
+    let selectedCity = 'Vilnius'; // Default city
+
+    function selectCity(city) {
+        selectedCity = city;
+        document.querySelectorAll('.city-button').forEach(button => {
+            button.classList.remove('selected');
+        });
+        document.getElementById(city.toLowerCase()).classList.add('selected');
+    }
+
+    // EmailJS form submission
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Collect form data
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value,
+            city: selectedCity,
+        };
+
+        // Send email via EmailJS
+        emailjs.send('service_yhmnz75', 'template_a7asm4f', formData)
+            .then(function(response) {
+                alert('Message sent successfully!');
+            }, function(error) {
+                alert('Failed to send message. Please try again.');
+            });
+    });
+</script>
+
+</body>
+</html>

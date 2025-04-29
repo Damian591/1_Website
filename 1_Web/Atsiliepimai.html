@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aesthetic Beauty</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar-brand img {
+      width: 60px;
+      height: 80px;
+      margin-right: 15px;
+    }
+    .review-card {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with Logo and Navigation Menu -->
+  <header class="bg-dark text-white p-3">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">
+          <img src="photos/logo.png" alt="Logo">
+          <span id="page-title">Aesthetic Beauty</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> <!-- Icon for navbar-toggler -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" id="home-link" href="index.html">Pagrindinis</a></li>
+            <li class="nav-item"><a class="nav-link" id="team-link" href="doctors.html">Komanda</a></li>
+            <li class="nav-item"><a class="nav-link" id="services-link" href="servicesandprices.html">Paslaugos</a></li>
+            <li class="nav-item"><a class="nav-link" id="gallery-link" href="gallery.html">Galerija</a></li>
+            <li class="nav-item"><a class="nav-link" id="review-link" href="Atsiliepimai.html">Atsiliepimai</a></li>
+			<li class="nav-item"><a class="nav-link" id="contact-link" href="contacts.html">Kontaktai</a></li>
+          </ul>
+          <!-- Language selection buttons -->
+          <div class="ml-auto">
+            <button class="btn btn-outline-light" onclick="setLanguage('lt')">LT</button>
+            <button class="btn btn-outline-light" onclick="setLanguage('en')">EN</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Reviews Section -->
+  <section class="container my-5">
+    <h2 id="reviews-title" class="text-center mb-4">Atsiliepimai</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card review-card">
+          <div class="card-body">
+            <p class="card-text">"Lankiausi šioje klinikoje kelis kartus, ir kiekvieną kartą likau labai patenkinta. Kosmetologės yra tikros profesionalės – jų patarimai ir paslaugos pranoko mano lūkesčius! Atmosfera itin maloni, ir jaučiuosi visiškai atsipalaidavusi. Labai rekomenduoju visiems, kurie ieško kokybiškų kosmetologijos paslaugų."</p>
+            <p class="text-muted">- da</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card review-card">
+          <div class="card-body">
+            <p class="card-text">"Man labai patiko šios klinikos dėmesys klientui. Kosmetologė skyrė laiko išsamiai konsultacijai, paaiškino kiekvieną procedūros žingsnį ir patarė, kaip prižiūrėti odą po procedūros. Dabar mano oda atrodo sveika ir švytinti. Esu labai patenkinta rezultatais!"</p>
+            <p class="text-muted">- Damian</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card review-card">
+          <div class="card-body">
+            <p class="card-text">"Ši klinika visiškai pakeitė mano požiūrį į odos priežiūrą. Po kiekvienos procedūros matau teigiamus pokyčius ir jaučiuosi labiau pasitikinti savimi. Kosmetologės buvo labai draugiškos ir profesionalios – kiekvieną kartą laukiu grįžimo čia!"</p>
+            <p class="text-muted">- Damian</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add a Review Form with Clear Button -->
+  <section class="container my-5">
+    <h2 id="add-review-title" class="text-center mb-4">Pridėti Atsiliepimą</h2>
+    <form id="reviewForm">
+      <div class="form-group">
+        <label id="name-link" for="name">Vardas</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <div class="form-group">
+        <label id="email-link" for="email">El. paštas</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="form-group">
+        <label id="message-link" for="message">Žinutė</label>
+        <textarea class="form-control" id="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Siųsti</button>
+      <button type="reset" class="btn btn-secondary" onclick="clearForm()">Išvalyti</button>
+    </form>
+    <div id="alert" class="alert alert-danger mt-3 d-none" role="alert"></div>
+  </section>
+  
+   <nav aria-label="Page navigation example" class="mt-4">
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="index.html">1</a></li>
+        <li class="page-item"><a class="page-link" href="doctors.html">2</a></li>
+        <li class="page-item"><a class="page-link" href="servicesandprices.html">3</a></li>
+		<li class="page-item"><a class="page-link" href="gallery.html">4</a></li>
+		<li class="page-item"><a class="page-link" href="Atsiliepimai.html">5</a></li>
+		<li class="page-item"><a class="page-link" href="contacts.html">6</a></li>
+      </ul>
+    </nav>
+
+  <!-- JavaScript for Validation, Language Switching, and Animation -->
+  <script>
+    document.getElementById("reviewForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      const alertBox = document.getElementById("alert");
+
+      const namePattern = /^[a-zA-Z\s]+$/;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const maxMessageLength = 250;
+
+      if (!namePattern.test(name)) {
+        displayAlert("Vardas turi būti sudarytas tik iš raidžių.");
+        return;
+      }
+
+      if (!emailPattern.test(email)) {
+        displayAlert("Įveskite teisingą el. pašto adresą.");
+        return;
+      }
+
+      if (message.length > maxMessageLength) {
+        displayAlert("Žinutė per ilga. Maksimalus ilgis yra 250 simbolių.");
+        return;
+      }
+
+      alert("Atsiliepimas sėkmingai išsiųstas!");
+      clearForm();
+      alertBox.classList.add("d-none");
+    });
+
+    function displayAlert(message) {
+      const alertBox = document.getElementById("alert");
+      alertBox.textContent = message;
+      alertBox.classList.remove("d-none");
+    }
+
+    function clearForm() {
+      document.getElementById("reviewForm").reset();
+      document.getElementById("alert").classList.add("d-none");
+    }
+
+    // Reviews Animation
+    let index = 0;
+    const reviewCards = document.querySelectorAll(".review-card");
+    const interval = setInterval(() => {
+      if (index < reviewCards.length) {
+        reviewCards[index].style.opacity = 1;
+        reviewCards[index].style.transition = "opacity 1s";
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 1000);
+
+    // Language switching functionality
+    const translations = {
+  "lt": {
+    "page-title": "Aesthetic Beauty",
+    "home-link": "Pagrindinis",
+    "team-link": "Komanda",
+    "services-link": "Paslaugos",
+    "gallery-link": "Galerija",
+    "review-link": "Atsiliepimai",
+    "contact-link": "Kontaktai",
+    "reviews-title": "Atsiliepimai",
+    "add-review-title": "Pridėti Atsiliepimą",
+    "send-button": "Siųsti",
+    "clear-button": "Išvalyti",
+	"name-link": "Vardas",
+	"email-link": "El. paštas",
+	"message-link": "Žinutė",
+  },
+  "en": {
+    "page-title": "Aesthetic Beauty",
+    "home-link": "Home",
+    "team-link": "Doctors",
+    "services-link": "Services",
+    "gallery-link": "Gallery",
+    "review-link": "Reviews",
+    "contact-link": "Contacts",
+    "reviews-title": "Reviews",
+    "add-review-title": "Add a Review",
+    "send-button": "Send",
+    "clear-button": "Clear",
+	"name-link": "Name",
+	"email-link": "Email",
+	"message-link": "Message",
+  }
+};
+
+    function setLanguage(lang) {
+      document.getElementById("page-title").textContent = translations[lang]["page-title"];
+      document.getElementById("home-link").textContent = translations[lang]["home-link"];
+      document.getElementById("team-link").textContent = translations[lang]["team-link"];
+      document.getElementById("services-link").textContent = translations[lang]["services-link"];
+      document.getElementById("gallery-link").textContent = translations[lang]["gallery-link"];
+      document.getElementById("contact-link").textContent = translations[lang]["contact-link"];
+	  document.getElementById("review-link").textContent = translations[lang]["review-link"];
+      document.getElementById("reviews-title").textContent = translations[lang]["reviews-title"];
+      document.getElementById("add-review-title").textContent = translations[lang]["add-review-title"];
+	  document.getElementById("name-link").textContent = translations[lang]["name-link"];
+	  document.getElementById("email-link").textContent = translations[lang]["email-link"];
+	  document.getElementById("message-link").textContent = translations[lang]["message-link"];
+      document.querySelector("button[type='submit']").textContent = translations[lang]["send-button"];
+      document.querySelector("button[type='reset']").textContent = translations[lang]["clear-button"];
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
